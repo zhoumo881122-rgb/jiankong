@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jk.jianyangba.com/sitemap.xml
