@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const baseUrl = "https://jk.jianyangba.com";
+const baseUrl = "https://jk.skyba.cn";
 
 const company = {
   name: "成都天际网络科技有限公司",
@@ -388,5 +388,9 @@ fs.writeFileSync(path.join(root, "robots.txt"), `User-agent: *
 Allow: /
 Sitemap: ${baseUrl}/sitemap.xml
 `, "utf8");
+fs.writeFileSync(path.join(root, "urls.txt"), [
+  `${baseUrl}/`,
+  ...regions.map((r) => `${baseUrl}/${r.slug}/`),
+].join("\n") + "\n", "utf8");
 
 console.log(`Generated homepage and ${regions.length} region pages.`);
